@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolBarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.merodyadt.belotasistent.MainActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolBarMenu"
+        android:background="@color/colorPrimary"
+        >
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolBarMenu"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/BtnIgra501"
+            android:onClick="Start501Game"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_default"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:text="Igra do 501" />
+
+        <Button
+            android:id="@+id/BtnIgra1001"
+            android:onClick="Start1001Game"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_default"
+            android:layout_marginTop="15dp"
+            android:text="Igra do 1001"
+            android:layout_below="@+id/BtnIgra501"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/BtnIgraTournament"
+            android:onClick="StartTournamentGame"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_default"
+            android:layout_marginTop="15dp"
+            android:text="Turnir (vise Timova)"
+            android:layout_below="@+id/BtnIgra1001"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/BtnExit"
+            android:onClick="ExitApplication"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_default"
+            android:layout_marginBottom="15dp"
+            android:text="Izlaz"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/BtnAbout"
+            android:onClick="ShowAboutMessage"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/BtnExit"
+            android:background="@android:drawable/btn_default"
+            android:layout_marginBottom="15dp"
+            android:text="O aplikaciji"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
