@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Belot asistent</string>
+
+
+    <string-array name="scoreboardlongclickoptions">
+        <item>Brisi unos</item>
+
+    </string-array>
 </resources>

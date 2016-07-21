@@ -21,5 +21,4 @@ public class GameRound {
     public int GetScoreB(){
         return ScoreB;
     }
-
 }

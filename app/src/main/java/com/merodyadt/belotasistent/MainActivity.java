@@ -23,9 +23,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void ShowAboutMessage(View view){
-        Toast.makeText(getApplicationContext(), "Izradio: Filip Radic",
+    public void ShowAboutDialog(View view){
+        Toast.makeText(getApplicationContext(), "Izradili: Filip Radic",
                 Toast.LENGTH_LONG).show();
+
+        // Open a dialog with all the credits
+
     }
 
     public void ExitApplication(View view){
@@ -38,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         // Start a new game
         Intent i = new Intent(this, GameActivity.class);
         i.putExtra("WinScore", 501);
+        this.startActivity(i);
+    }
+
+    public void Start701Game(View view){
+        // Start a new game
+        Intent i = new Intent(this, GameActivity.class);
+        i.putExtra("WinScore", 701);
         this.startActivity(i);
     }
 
