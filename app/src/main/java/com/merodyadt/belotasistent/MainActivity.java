@@ -24,11 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void ShowAboutDialog(View view){
-        Toast.makeText(getApplicationContext(), "Izradili: Filip Radic",
-                Toast.LENGTH_LONG).show();
-
-        // Open a dialog with all the credits
-
+        Intent i = new Intent(this, AboutActivity.class);
+        this.startActivity(i);
     }
 
     public void ExitApplication(View view){
@@ -61,5 +58,10 @@ public class MainActivity extends AppCompatActivity {
     public void StartTournamentGame(View view){
         Toast.makeText(getApplicationContext(), "Turnirski mod je trenutno u izradi",
                 Toast.LENGTH_LONG).show();
+    }
+
+    public void OpenHelpActivity(View view){
+        Intent i = new Intent(this, HelpActivity.class);
+        this.startActivity(i);
     }
 }

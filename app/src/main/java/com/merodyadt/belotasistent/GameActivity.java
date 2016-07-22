@@ -74,8 +74,6 @@ public class GameActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.action_add_score:
-                Toast.makeText(getApplicationContext(), "Add score dialog!",
-                        Toast.LENGTH_LONG).show();
                 OpenInputDialog();
 
 
@@ -137,9 +135,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 final int rowIndex = position;
-                Log.d("Listview", "Long press on index " + Integer.toString(rowIndex));
-                // TODO
-                // this isn't opening any dialogs, it should open a dialog and offer the user to delete an entry
+                OpenLongHoldDialog(rowIndex);
                 return false;
             }
         });
@@ -175,7 +171,6 @@ public class GameActivity extends AppCompatActivity {
 
     public void OpenChangeTeamNameDialog(View view){
         final TextView clickedView = (TextView)view;
-        Log.d("Old Name", clickedView.getText().toString());
 
         AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
         builder.setTitle("Izmjena naziva ekipe");
@@ -201,6 +196,22 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
+        builder.show();
+    }
+
+
+    private void OpenLongHoldDialog(final int index){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Opcije");
+        builder.setItems(R.array.scoreboardlongclickoptions, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // the user clicked on colors[which]
+                gameRounds.remove(index);
+                adapter.notifyDataSetChanged();
+                CalculateAndUpdateGui();
+            }
+        });
         builder.show();
     }
 

@@ -2,8 +2,10 @@
     <string name="app_name">Belot asistent</string>
 
 
-    <string-array name="scoreboardlongclickoptions">
-        <item>Brisi unos</item>
+    <string name="CC4License"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a></string>
 
+
+    <string-array name="scoreboardlongclickoptions">
+        <item>Briši unos</item>
     </string-array>
 </resources>
