@@ -11,7 +11,9 @@
         android:id="@+id/toolBarAbout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>
+        android:background="@color/colorPrimary">
+
+    </android.support.v7.widget.Toolbar>
 
 
     <ScrollView
@@ -42,8 +44,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/ActivityAboutAppLogo"
+                    android:layout_toRightOf="@+id/ActivityAboutAppLogo"
                     android:gravity="center"
                     android:text="Belot Asistent"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -70,6 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:text="Aplikaciju izradili:"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -80,6 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_below="@id/ActivityAboutTextViewAplikacija"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
@@ -91,6 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_below="@id/ActivityAboutTextViewAppDev1"
                     android:layout_marginLeft="10dp"
                     android:text="Filip Jakupec"
@@ -117,6 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:text="Zasluge za slike:"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -127,6 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_below="@id/ActivityAboutTextViewImagesCredits"
                     android:layout_marginLeft="10dp"
                     android:text="Sketch Book Icon by DesignContest under CC Attribution 4.0 License"
@@ -137,6 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_below="@id/ActivityAboutTextViewCreditSketchBook"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
@@ -150,6 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_below="@id/ActivityAboutTextViewCC4Hyperlink"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
@@ -179,6 +190,7 @@
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/github_mark_dark" />
@@ -192,7 +204,9 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@+id/ActivityAboutGitHubMark" />
+                    android:layout_alignParentRight="true"
+                    android:layout_toEndOf="@+id/ActivityAboutGitHubMark"
+                    android:layout_toRightOf="@+id/ActivityAboutGitHubMark"/>
 
                 <!-- Separator horizontal line -->
                 <View

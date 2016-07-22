@@ -3,17 +3,17 @@
 >Android aplikacija za pomoć pri zbrajanju bodova kod kartaške igre Belot
 
 ### Mogućnosti
-- Mogućnost brojanja bodova do 501,701 i 1001
+- Brojanja bodova do 501,701 ili 1001
 - Podrška za tablet uređaje
 - Podesivi nazivi ekipa
+- Mogućnost brisanja zapisanih runda (u slučaju pogreške)
 
   
 # Slika
-![alt tag](http://hotlinkhere)
+![Imgur](http://i.imgur.com/zP0JNWfl.png)
 
->put link here
 
 
 # Build info
 ### IDE
->Android Studio projekt
+>Android Studio project
