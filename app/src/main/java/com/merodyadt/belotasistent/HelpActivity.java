@@ -13,7 +13,7 @@ public class HelpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_help);
 
         Toolbar t = (Toolbar)findViewById(R.id.toolBarHelp);
-        t.setTitle("Pomoć i napomene");
+        t.setTitle(R.string.ActivityHelpToolBarText);
         t.setTitleTextColor(Color.WHITE);
         setSupportActionBar(t);
     }

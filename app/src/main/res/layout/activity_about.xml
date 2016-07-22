@@ -49,7 +49,7 @@
                     android:layout_toEndOf="@+id/ActivityAboutAppLogo"
                     android:layout_toRightOf="@+id/ActivityAboutAppLogo"
                     android:gravity="center"
-                    android:text="Belot Asistent"
+                    android:text="@string/ActivityAboutAppName"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <!-- Separator horizontal line -->
@@ -76,7 +76,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
-                    android:text="Aplikaciju izradili:"
+                    android:text="@string/ActivityAboutDevNames"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/black" />
 
@@ -89,7 +89,7 @@
                     android:layout_below="@id/ActivityAboutTextViewAplikacija"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:text="Filip Radic"
+                    android:text="@string/ActivityAboutDev1"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
@@ -100,7 +100,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_below="@id/ActivityAboutTextViewAppDev1"
                     android:layout_marginLeft="10dp"
-                    android:text="Filip Jakupec"
+                    android:text="@string/ActivityAboutDev2"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <!-- Separator horizontal line -->
@@ -126,7 +126,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
-                    android:text="Zasluge za slike:"
+                    android:text="@string/ActivityAboutImageCredits"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/black" />
 
@@ -138,7 +138,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_below="@id/ActivityAboutTextViewImagesCredits"
                     android:layout_marginLeft="10dp"
-                    android:text="Sketch Book Icon by DesignContest under CC Attribution 4.0 License"
+                    android:text="@string/ActivityAboutImageSketchBook"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
@@ -164,7 +164,7 @@
                     android:layout_below="@id/ActivityAboutTextViewCC4Hyperlink"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
-                    android:text="Trophy Gold Icon by Icons-Land"
+                    android:text="@string/ActivityAboutImageCreditTrophyGold"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <!-- Separator horizontal line -->
@@ -200,7 +200,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="Ovaj projekt je open-source i dostupan je na GitHub-u."
+                    android:text="@string/ActivityAboutGitHubDescription"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"

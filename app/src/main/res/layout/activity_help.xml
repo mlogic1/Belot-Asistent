@@ -38,7 +38,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
-                    android:text="1. Zadnji štih"
+                    android:text="@string/HelpEntryTitle1"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/black" />
 
@@ -51,7 +51,7 @@
                     android:layout_below="@id/ActivityHelpTitle1"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:text="10 bodova od zadnjeg štiha su automatski pribrojeni, dovoljno je unijeti samo broj bodova jedne ekipe."
+                    android:text="@string/HelpEntryText1"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <!-- Separator horizontal line -->
@@ -77,7 +77,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
-                    android:text="2. Brisanje zapisanih runda"
+                    android:text="@string/HelpEntryTitle2"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/black" />
 
@@ -90,7 +90,7 @@
                     android:layout_below="@id/ActivityHelpTitle2"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:text="Ukoliko želite obrisati neki od upisanih runda (npr. pogrešno upisani bodovi) pritisnite i držite na rundu koju želite obrisati i odaberite 'Briši unos'."
+                    android:text="@string/HelpEntryText2"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <!-- Separator horizontal line -->
@@ -116,7 +116,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
-                    android:text="3. Promijena naziva ekipa"
+                    android:text="@string/HelpEntryTitle3"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/black" />
 
@@ -129,7 +129,7 @@
                     android:layout_below="@id/ActivityHelpTitle3"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:text="Ukoliko želite promijeniti naziv ekipe sa mi/vi kliknite na naziv ekipe kojoj želite promijeniti naziv te će te moći preimenovati ekipu."
+                    android:text="@string/HelpEntryText3"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <!-- Separator horizontal line -->

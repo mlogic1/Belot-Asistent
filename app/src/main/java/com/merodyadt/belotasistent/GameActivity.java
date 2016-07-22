@@ -92,17 +92,17 @@ public class GameActivity extends AppCompatActivity {
 
         // At least one entry is in the scoreboard, promt the user to confirm
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Izlaz");
-        builder.setMessage("U aplikaciju su unešene odigrane runde, izlaskom će se izgubiti sve što ste unijeli.\nSigurno želite izaći?");
+        builder.setTitle(R.string.ActivityGameExitDialogTitle);
+        builder.setMessage(R.string.ActivityGameExitDialogText);
 
-        builder.setPositiveButton("Da", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.ActivityGameYes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
             }
         });
 
-        builder.setNegativeButton("Ne", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.ActivityGameNo, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -117,7 +117,7 @@ public class GameActivity extends AppCompatActivity {
 
     private void SetupToolbar(){
         Toolbar t = (Toolbar)findViewById(R.id.toolBarGame);
-        t.setTitle("Belot Asistent");
+        t.setTitle(R.string.ActivityGameToolBarText);
         t.setTitleTextColor(Color.WHITE);
         setSupportActionBar(t);
     }
@@ -173,7 +173,7 @@ public class GameActivity extends AppCompatActivity {
         final TextView clickedView = (TextView)view;
 
         AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
-        builder.setTitle("Izmjena naziva ekipe");
+        builder.setTitle(R.string.ActivityGameTeamNameChangeDialogTitle);
 
         // Set up the input
         final EditText input = new EditText(this);
@@ -183,13 +183,13 @@ public class GameActivity extends AppCompatActivity {
         builder.setView(input);
 
         // Set up the buttons
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.ActivityGameOk, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 clickedView.setText(input.getText().toString());
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.ActivityGameCancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -202,7 +202,7 @@ public class GameActivity extends AppCompatActivity {
 
     private void OpenLongHoldDialog(final int index){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Opcije");
+        builder.setTitle(R.string.ActivityGameOptions);
         builder.setItems(R.array.scoreboardlongclickoptions, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -223,7 +223,7 @@ public class GameActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
         builder.setView(promtView);
-        builder.setTitle("Unos bodova");
+        builder.setTitle(R.string.ActivityGameInputDialogTitle);
 
 
         // All gui objects declarations
@@ -240,11 +240,10 @@ public class GameActivity extends AppCompatActivity {
 
 
         builder.setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ActivityGameOk, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Confirm button
-
                         int x = Integer.parseInt(scoreTeamA.getText().toString());
 
 
@@ -290,16 +289,12 @@ public class GameActivity extends AppCompatActivity {
                             belaTeamA = false;
                             belaTeamB = true;
                         }
-
-                        Log.d("Additional A", Integer.toString(additionalScoreTeamA));
-                        Log.d("Additional B", Integer.toString(additionalScoreTeamB));
-
                         CalculateFinalScores(callingTeam, baseScoreTeamA, baseScoreTeamB, additionalScoreTeamA, additionalScoreTeamB, belaTeamA, belaTeamB);
                         CalculateAndUpdateGui();
 
                     }
                 })
-                .setNegativeButton("Prekid", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.ActivityGameCancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Do nothing, user canceled
@@ -316,7 +311,6 @@ public class GameActivity extends AppCompatActivity {
             }
         });
         dialog.show();
-
 
 
         // Radio button listeners used to prevent user from checking both radio buttons
@@ -392,7 +386,6 @@ public class GameActivity extends AppCompatActivity {
                 // Check if text is empty string, if it is, empty the other team's score edittext, disable confirm button if it was enabled and return
                 if(s.toString().equals("")){
                     scoreTeamB.setText("");
-                    Log.d("OnTextChanged", "String is empty");
                     ((AlertDialog)dialog).getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
                     return;
                 }
@@ -443,7 +436,6 @@ public class GameActivity extends AppCompatActivity {
                 // Check if text is empty string, if it is, empty the other team's score edittext, disable confirm button if it was enabled and return
                 if(s.toString().equals("")){
                     scoreTeamA.setText("");
-                    Log.d("OnTextChanged", "String is empty");
                     ((AlertDialog)dialog).getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
                     return;
                 }
@@ -485,7 +477,7 @@ public class GameActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
         builder.setView(promtView);
-        builder.setTitle("Runda je završila");
+        builder.setTitle(R.string.ActivityGameEndDialogTitle);
         builder.setIcon(R.drawable.trophy_gold);
         final AlertDialog dialog;
 
@@ -496,7 +488,7 @@ public class GameActivity extends AppCompatActivity {
         textView.setText(endGameDialogText);
 
         // Display the dialog with just OK button
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.ActivityGameOk, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // Dismiss dialog and restart the game
@@ -528,14 +520,6 @@ public class GameActivity extends AppCompatActivity {
     public void CalculateFinalScores(boolean callingTeam, int scoreTeamA, int scoreTeamB, int zvanjeTeamA, int zvanjeTeamB, boolean belaTeamA, boolean belaTeamB){
         // calling team: false is teamA, true is teamB
 
-        Log.d("Jake calling team", String.valueOf(callingTeam));
-        Log.d("Jake base a", Integer.toString(scoreTeamA));
-        Log.d("Jake base b", Integer.toString(scoreTeamB));
-        Log.d("Jake add a", Integer.toString(zvanjeTeamA));
-        Log.d("Jake add b", Integer.toString(zvanjeTeamB));
-        Log.d("Jake bela a", String.valueOf(belaTeamA));
-        Log.d("Jake bela b", String.valueOf(belaTeamB));
-
         int ukupno = 162;
         ukupno = ukupno + zvanjeTeamA + zvanjeTeamB;
         if(belaTeamB)
@@ -555,7 +539,8 @@ public class GameActivity extends AppCompatActivity {
         {
             if (ukupno/2 >= scoreTeamB)
             {
-                Log.d("Jay's Func", "Team B pada");
+                Toast.makeText(getApplicationContext(), R.string.ActivityGameCallingTeamFailed,
+                        Toast.LENGTH_LONG).show();
                 scoreTeamB = 0;
                 scoreTeamA = ukupno;
             }
@@ -564,14 +549,12 @@ public class GameActivity extends AppCompatActivity {
         {
             if(ukupno/2 >= scoreTeamA)
             {
-                Log.d("Jay's Func", "Team A pada");
+                Toast.makeText(getApplicationContext(), R.string.ActivityGameCallingTeamFailed,
+                        Toast.LENGTH_LONG).show();
                 scoreTeamA = 0;
                 scoreTeamB = ukupno;
             }
         }
-
-        Log.d("Final Team A score", Integer.toString(scoreTeamA));
-        Log.d("Final Team B score", Integer.toString(scoreTeamB));
 
         GameRound g = new GameRound(scoreTeamA, scoreTeamB);
         gameRounds.add(g);

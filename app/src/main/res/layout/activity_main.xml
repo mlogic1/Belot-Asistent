@@ -36,7 +36,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="Igra do 501" />
+                android:text="@string/game501" />
 
             <Button
                 android:id="@+id/BtnIgra701"
@@ -47,7 +47,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="Igra do 701" />
+                android:text="@string/game701" />
 
             <Button
                 android:id="@+id/BtnIgra1001"
@@ -58,7 +58,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="Igra do 1001" />
+                android:text="@string/game1001" />
 
             <Button
                 android:id="@+id/BtnIgraTournament"
@@ -69,7 +69,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="Turnir (vise Timova)" />
+                android:text="@string/gameTournament" />
 
             <Button
                 android:layout_width="match_parent"
@@ -80,7 +80,7 @@
                 android:background="@android:drawable/btn_default"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="Pomoć ( i bitne napomene )"/>
+                android:text="@string/helpAndTips"/>
 
             <Button
                 android:id="@+id/BtnAbout"
@@ -91,7 +91,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="O aplikaciji" />
+                android:text="@string/about" />
 
             <Button
                 android:id="@+id/BtnExit"
@@ -102,7 +102,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="Izlaz" />
+                android:text="@string/exit" />
 
 
 
