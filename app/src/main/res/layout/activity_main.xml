@@ -28,37 +28,16 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/BtnIgra501"
-                android:onClick="Start501Game"
+                android:id="@+id/BtnIgra"
+                android:onClick="StartGame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/btn_default"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="@string/game501" />
+                android:text="@string/gameStart" />
 
-            <Button
-                android:id="@+id/BtnIgra701"
-                android:onClick="Start701Game"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:drawable/btn_default"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:text="@string/game701" />
-
-            <Button
-                android:id="@+id/BtnIgra1001"
-                android:onClick="Start1001Game"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:drawable/btn_default"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:text="@string/game1001" />
 
             <Button
                 android:id="@+id/BtnIgraTournament"
@@ -71,16 +50,17 @@
                 android:layout_marginRight="5dp"
                 android:text="@string/gameTournament" />
 
+
             <Button
+                android:id="@+id/BtnPreferences"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="OpenHelpActivity"
-                android:id="@+id/BtnHelp"
+                android:onClick="OpenSettings"
                 android:layout_marginTop="25dp"
                 android:background="@android:drawable/btn_default"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="@string/helpAndTips"/>
+                android:text="@string/settings"/>
 
             <Button
                 android:id="@+id/BtnAbout"

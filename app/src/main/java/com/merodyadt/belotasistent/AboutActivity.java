@@ -1,8 +1,10 @@
 package com.merodyadt.belotasistent;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,14 +14,29 @@ public class AboutActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
 
+    // Application settings
+    SharedPreferences preferences;
+    String appThemeColor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        LoadSettings();
+        SetupToolBar();
+    }
+
+    private void LoadSettings(){
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        appThemeColor = preferences.getString("themeColor", "");
+    }
+
+    private void SetupToolBar(){
         toolbar = (Toolbar)findViewById(R.id.toolBarAbout);
         toolbar.setTitle(R.string.ActivityAboutToolBarText);
         toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setBackgroundColor(Color.parseColor(appThemeColor));
         setSupportActionBar(toolbar);
     }
 

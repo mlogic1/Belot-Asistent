@@ -2,8 +2,9 @@ package com.merodyadt.belotasistent;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,7 +12,6 @@ import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +22,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +32,6 @@ public class GameActivity extends AppCompatActivity {
 
     private ArrayAdapter<GameRound> adapter = null; // Array adapter that updates the listview scoreboard according to gameRounds arraylist
     private ArrayList<GameRound> gameRounds;        // Game scores are stored as GameRound objects (they only contain two integer scores from each round)
-    private  int WinScore;                          // Constant defining how much score is needed to win
     private boolean scoreBoardHasAtLeastOneEntry;   // Boolean defining if at least one entry is present in the scoreboard, this is only used to prevent user from accidentally exiting activity
 
     private ListView listViewScoreboard;            // Gui listview
@@ -42,17 +42,31 @@ public class GameActivity extends AppCompatActivity {
 
 
 
+    // Application settings
+    private SharedPreferences preferences;
+    private  int WinScore;                          // Constant defining how much score is needed to win
+    private boolean countRounds;
+    private String TeamNameA;
+    private String TeamNameB;
+    private String appThemeColor;
+
+    private Toolbar toolBar;
+    private String RoundsCount = "";                     // String that's added to the toolbar title, if the user wants rounds to be counted, this will be to right of app name text in toolbar
+    private int roundsWonTeamA = 0;
+    private int roundsWonTeamB = 0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        // Get score that's needed to win and set it up
-        Intent i = getIntent();
-        WinScore = i.getIntExtra("WinScore", 0);
+        // Load saved settings
+        LoadSettings();
 
         // Set up toolbar
         SetupToolbar();
+        SetupActivityBackground();
 
         // Initialize scoreboard, scoreboard variables, custom adapter  and set it up
         SetupListView();
@@ -115,11 +129,68 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    private void LoadSettings(){
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        WinScore = Integer.parseInt(preferences.getString("roundWinScore", ""));
+        countRounds = preferences.getBoolean("countRounds", true);
+        TeamNameA = preferences.getString("defaultTeamNameA", "");
+        TeamNameB = preferences.getString("defaultTeamNameB", "");
+        appThemeColor = preferences.getString("themeColor", "");
+    }
+
     private void SetupToolbar(){
-        Toolbar t = (Toolbar)findViewById(R.id.toolBarGame);
-        t.setTitle(R.string.ActivityGameToolBarText);
-        t.setTitleTextColor(Color.WHITE);
-        setSupportActionBar(t);
+        toolBar = (Toolbar)findViewById(R.id.toolBarGame);
+        toolBar.setTitle(R.string.ActivityGameToolBarText);
+        toolBar.setTitleTextColor(Color.WHITE);
+        toolBar.setBackgroundColor(Color.parseColor(appThemeColor));
+        setSupportActionBar(toolBar);
+
+
+
+        // User wants round counter to be enabled
+        if(countRounds){
+            RoundsCount = " (" + roundsWonTeamA + " : " + roundsWonTeamB + ")";
+            toolBar.setTitle(getResources().getString(R.string.ActivityGameToolBarText) + RoundsCount);
+        }
+    }
+
+    private void SetupActivityBackground(){
+        RelativeLayout gameLayout = (RelativeLayout)findViewById(R.id.ActivityGameMasterLayout);
+        switch (appThemeColor){
+            case "#4CAF50":
+                assert gameLayout != null;
+                gameLayout.setBackgroundColor(Color.parseColor("#E8F5E9"));
+                break;
+
+            case "#607D8B":
+                assert gameLayout != null;
+                gameLayout.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                break;
+
+            case "#FF5722":
+                assert gameLayout != null;
+                gameLayout.setBackgroundColor(Color.parseColor("#FBE9E7"));
+                break;
+
+            case "#2196F3":
+                assert gameLayout != null;
+                gameLayout.setBackgroundColor(Color.parseColor("#E3F2FD"));
+                break;
+
+            default:
+                assert gameLayout != null;
+                gameLayout.setBackgroundColor(Color.parseColor("#E3F2FD"));
+                break;
+        }
+    }
+
+    private void UpdateToolBar(){
+        // User wants round counter to be enabled
+        if(countRounds){
+            RoundsCount = " (" + roundsWonTeamA + " : " + roundsWonTeamB + ")";
+            toolBar.setTitle(getResources().getString(R.string.ActivityGameToolBarText) + RoundsCount);
+        }
     }
 
     private void SetupListView(){
@@ -150,6 +221,9 @@ public class GameActivity extends AppCompatActivity {
         textViewNameTeamA = (TextView)findViewById(R.id.TextViewNameTeamA);
         textViewNameTeamB = (TextView)findViewById(R.id.TextViewNameTeamB);
 
+        // Set team names from settings
+        textViewNameTeamA.setText(TeamNameA);
+        textViewNameTeamB.setText(TeamNameB);
 
         textViewNameTeamA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -597,10 +671,14 @@ public class GameActivity extends AppCompatActivity {
             // Team A won
             String winTeamName = textViewNameTeamA.getText().toString();
             OpenEndGameDialog( winTeamName, totalScoreA, totalScoreB);
+            roundsWonTeamA++;
+            UpdateToolBar();
         }else if(totalScoreB > WinScore){
             // Team B won
             String winTeamName = textViewNameTeamB.getText().toString();
             OpenEndGameDialog( winTeamName, totalScoreB, totalScoreA);
+            roundsWonTeamB++;
+            UpdateToolBar();
         }else{
             // Nobody won, do nothing
         }

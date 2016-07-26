@@ -1,57 +1,64 @@
 package com.merodyadt.belotasistent;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.provider.Settings;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
+import com.merodyadt.belotasistent.preferences.GamePrefActivity;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Toolbar toolBar;
+
+    // Application settings
+    SharedPreferences preferences;
+    String appThemeColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
-        Toolbar t = (Toolbar)findViewById(R.id.toolBarMenu);
-        t.setTitle("Belot Asistent");
-        t.setTitleTextColor(Color.WHITE);
-        setSupportActionBar(t);
+        LoadSettings();
+        SetupToolBar();
+
     }
 
 
-    public void ShowAboutDialog(View view){
-        Intent i = new Intent(this, AboutActivity.class);
-        this.startActivity(i);
+
+    // This method gets called when the user presses Back from some of the activities and comes back to menu
+    // Its needed when the user changes the theme and comes back to the menu, so the new theme is applied
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        appThemeColor = preferences.getString("themeColor", "");
+        toolBar.setBackgroundColor(Color.parseColor(appThemeColor));
     }
 
-    public void ExitApplication(View view){
-        finish();
-        System.exit(0);
+    private void LoadSettings(){
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        appThemeColor = preferences.getString("themeColor", "");
+    }
+
+    private void SetupToolBar(){
+        toolBar = (Toolbar)findViewById(R.id.toolBarMenu);
+        toolBar.setTitle(R.string.app_name);
+        toolBar.setTitleTextColor(Color.WHITE);
+        toolBar.setBackgroundColor(Color.parseColor(appThemeColor));
+        setSupportActionBar(toolBar);
     }
 
 
-    public void Start501Game(View view){
+    public void StartGame(View view){
         // Start a new game
         Intent i = new Intent(this, GameActivity.class);
-        i.putExtra("WinScore", 501);
-        this.startActivity(i);
-    }
-
-    public void Start701Game(View view){
-        // Start a new game
-        Intent i = new Intent(this, GameActivity.class);
-        i.putExtra("WinScore", 701);
-        this.startActivity(i);
-    }
-
-    public void Start1001Game(View view){
-        // Start a new game
-        Intent i = new Intent(this, GameActivity.class);
-        i.putExtra("WinScore", 1001);
         this.startActivity(i);
     }
 
@@ -60,8 +67,23 @@ public class MainActivity extends AppCompatActivity {
                 Toast.LENGTH_LONG).show();
     }
 
-    public void OpenHelpActivity(View view){
-        Intent i = new Intent(this, HelpActivity.class);
+    public void OpenSettings(View view){
+
+        // Open settings activity
+        Intent i = new Intent(this, GamePrefActivity.class);
+        startActivity(i);
+    }
+
+    public void ShowAboutDialog(View view){
+        Intent i = new Intent(this, AboutActivity.class);
         this.startActivity(i);
     }
+
+
+
+    public void ExitApplication(View view){
+        finish();
+        System.exit(0);
+    }
+
 }

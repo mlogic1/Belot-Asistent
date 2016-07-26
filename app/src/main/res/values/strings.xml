@@ -1,22 +1,16 @@
 <resources>
-    <string name="app_name">Belot asistent</string>
+    <string name="app_name">Belot Asistent</string>
 
-
+    <!-- LICENSE NAMES -->
     <string name="CC4License"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a></string>
 
     <!-- ACTIVITY MAIN -->
 
-    <string name="game501">IGRA DO 501</string>
-    <string name="game701">IGRA DO 501</string>
-    <string name="game1001">IGRA DO 1001</string>
-
+    <string name="gameStart">ZAPOČNI IGRU</string>
     <string name="gameTournament">TURNIR ( VIŠE TIMOVA )</string>
-
-    <string name="helpAndTips">POMOĆ ( I BITNE NAPOMENE )</string>
+	<string name="settings">POSTAVKE ( I NAPOMENE )</string>
     <string name="about">O APLIKACIJI</string>
     <string name="exit">IZLAZ</string>
-
-    <!-- ACTIVITY MAIN strings used by java -->
 
 
 
@@ -41,16 +35,11 @@
 	<string name="ActivityGameCallingTeamFailed">Ekipa koja je zvala je pala</string>
 	
 	<!-- ACTIVITY HELP -->
-	<string name="HelpEntryTitle1">1. Zadnji štih</string>
-	<string name="HelpEntryTitle2">2. Brisanje zapisanih runda</string>
-	<string name="HelpEntryTitle3">3. Promijena naziva ekipa</string>
+	<string name="HelpEntryTitle1">Zadnji štih</string>
+	<string name="HelpEntryTitle2">Brisanje zapisanih runda</string>
 	
-	<string name="HelpEntryText1">10 bodova od zadnjeg štiha su automatski pribrojeni, dovoljno je unijeti samo broj bodova jedne ekipe.</string>
-	<string name="HelpEntryText2">Ukoliko želite obrisati neki od upisanih runda (npr. pogrešno upisani bodovi) pritisnite i držite na rundu koju želite obrisati i odaberite Briši unos.</string>
-	<string name="HelpEntryText3">Ukoliko želite promijeniti naziv ekipe sa mi/vi kliknite na naziv ekipe kojoj želite promijeniti naziv te će te moći preimenovati ekipu.</string>
-	
-	<!-- ACTIVITY HELP strings used by java -->
-	<string name="ActivityHelpToolBarText">Pomoć i napomene</string>
+	<string name="HelpEntryText1">10 bodova od zadnjeg štiha su automatski pribrojeni.</string>
+	<string name="HelpEntryText2">Pritisnite i držite na rundu koju želite obrisati i odaberite Briši unos.</string>
 	
 	
 	
@@ -63,15 +52,10 @@
 	<string name="ActivityAboutImageSketchBook">Sketch Book Icon by DesignContest under CC Attribution 4.0 License</string>
 	<string name="ActivityAboutImageCreditTrophyGold">Trophy Gold Icon by Icons-Land</string>
 	<string name="ActivityAboutGitHubDescription">Ovaj projekt je open-source i dostupan je na GitHub-u.</string>
-	
-	
-	
+
 	
 	<!-- ACTIVITY ABOUT strings used by java -->
 	<string name="ActivityAboutToolBarText">O aplikaciji</string>
-	
-	
-	
 	
 	<!-- DIALOG SCORE INPUT	-->
 	<string name="DialogScoreInputCalling">Zvanje</string>
@@ -80,13 +64,65 @@
 	
 	<string name="DialogScoreInputHintPoints">Bodovi</string>
 	<string name="DialogScoreInputHintCalling">Zvanje</string>
-	
 	<string name="DialogScoreInputTextBela">Bela</string>
+
 	
+	<!--	SETTINGS	-->
+    <string name="SettingsToolBarName">Postavke</string>
+    <string name="SettingsCategory_Name1">Općenite postavke</string>
+    <string name="SettingsCategory_Name2">Napomene</string>
+	<string name="roundWinScore">roundWinScore</string>
+	<string name="countRounds">countRounds</string>
+	<string name="defaultTeamNameA">defaultTeamNameA</string>
+	<string name="defaultTeamNameB">defaultTeamNameB</string>
+	<string name="themeColor">themeColor</string>
+	
+	<!-- Titles in settings	-->
+	<string name="SettingsTitle_roundWinScore">Bodovi u jednoj rundi</string>	
+	<string name="SettingsTitle_countRounds">Broji runde</string>	
+	<string name="SettingsTitle_defaultTeamNameA">Početni naziv lijeve ekipe</string>	
+	<string name="SettingsTitle_defaultTeamNameB">Početni naziv desne ekipe</string>	
+	<string name="SettingsTitle_themeColor">Tema aplikacije</string>
 
+	<!-- Summaries in preferences -->
+    <string name="SettingsSummary_countRounds">Prikaži broj runda tokom igre</string>
+	
+	<!-- Choices for roundWinScores -->
+	<string-array name="roundWinScoresArray">
+		<item>1001</item>
+		<item>701</item>
+		<item>501</item>
+	</string-array>
 
+	<string name="roundWinScoreDefault">1001</string>
+	
+	<string-array name="roundWinScoresArrayValues">
+		<item>1001</item>
+		<item>701</item>
+		<item>501</item>
+	</string-array>
+	
+	<!-- Choices for themeColors -->
+	<string-array name="themeColors">
+		<item>Zelena</item>
+		<item>Plavo Siva</item>
+		<item>Tamno Narančasta</item>
+		<item>Plava</item>
+	</string-array>
+	
+	<!-- Values for themeColors -->
+	<string-array name="themeColorsValues">
+		<item>#4CAF50</item>
+		<item>#607D8B</item>
+		<item>#FF5722</item>
+		<item>#2196F3</item>
+	</string-array>
 
+	<string name="themeColorDefault">#4CAF50</string>
+	
+	<!-- Long hold on round entry options -->
     <string-array name="scoreboardlongclickoptions">
         <item>Briši unos</item>
     </string-array>
+	
 </resources>
