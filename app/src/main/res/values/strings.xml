@@ -13,8 +13,7 @@
     <string name="exit">IZLAZ</string>
 
 
-
-    <!-- ACTIVITY GAME -->
+	<!-- ACTIVITY GAME -->
 
     <string name="ActivityGameBottomTotalText">Total</string>
 	<string name="ActivityGameToolBarText">Belot Asistent</string>
@@ -33,16 +32,15 @@
 	<string name="ActivityGameInputDialogTitle">Unos bodova</string>
 	<string name="ActivityGameEndDialogTitle">Runda je završila</string>
 	<string name="ActivityGameCallingTeamFailed">Ekipa koja je zvala je pala</string>
-	
+
 	<!-- ACTIVITY HELP -->
 	<string name="HelpEntryTitle1">Zadnji štih</string>
 	<string name="HelpEntryTitle2">Brisanje zapisanih runda</string>
-	
+
 	<string name="HelpEntryText1">10 bodova od zadnjeg štiha su automatski pribrojeni.</string>
 	<string name="HelpEntryText2">Pritisnite i držite na rundu koju želite obrisati i odaberite Briši unos.</string>
-	
-	
-	
+
+
 	<!-- ACTIVITY ABOUT -->
 	<string name="ActivityAboutAppName">Belot Asistent</string>
 	<string name="ActivityAboutDevNames">Aplikaciju izradili:</string>
@@ -53,20 +51,20 @@
 	<string name="ActivityAboutImageCreditTrophyGold">Trophy Gold Icon by Icons-Land</string>
 	<string name="ActivityAboutGitHubDescription">Ovaj projekt je open-source i dostupan je na GitHub-u.</string>
 
-	
+
 	<!-- ACTIVITY ABOUT strings used by java -->
 	<string name="ActivityAboutToolBarText">O aplikaciji</string>
-	
+
 	<!-- DIALOG SCORE INPUT	-->
 	<string name="DialogScoreInputCalling">Zvanje</string>
 	<string name="DialogScoreInputNameTeamA">Mi</string>
 	<string name="DialogScoreInputNameTeamB">Vi</string>
-	
+
 	<string name="DialogScoreInputHintPoints">Bodovi</string>
 	<string name="DialogScoreInputHintCalling">Zvanje</string>
 	<string name="DialogScoreInputTextBela">Bela</string>
 
-	
+
 	<!--	SETTINGS	-->
     <string name="SettingsToolBarName">Postavke</string>
     <string name="SettingsCategory_Name1">Općenite postavke</string>
@@ -76,17 +74,17 @@
 	<string name="defaultTeamNameA">defaultTeamNameA</string>
 	<string name="defaultTeamNameB">defaultTeamNameB</string>
 	<string name="themeColor">themeColor</string>
-	
+
 	<!-- Titles in settings	-->
-	<string name="SettingsTitle_roundWinScore">Bodovi u jednoj rundi</string>	
-	<string name="SettingsTitle_countRounds">Broji runde</string>	
-	<string name="SettingsTitle_defaultTeamNameA">Početni naziv lijeve ekipe</string>	
-	<string name="SettingsTitle_defaultTeamNameB">Početni naziv desne ekipe</string>	
+	<string name="SettingsTitle_roundWinScore">Bodovi u jednoj rundi</string>
+	<string name="SettingsTitle_countRounds">Broji runde</string>
+	<string name="SettingsTitle_defaultTeamNameA">Početni naziv lijeve ekipe</string>
+	<string name="SettingsTitle_defaultTeamNameB">Početni naziv desne ekipe</string>
 	<string name="SettingsTitle_themeColor">Tema aplikacije</string>
 
 	<!-- Summaries in preferences -->
     <string name="SettingsSummary_countRounds">Prikaži broj runda tokom igre</string>
-	
+
 	<!-- Choices for roundWinScores -->
 	<string-array name="roundWinScoresArray">
 		<item>1001</item>
@@ -95,13 +93,13 @@
 	</string-array>
 
 	<string name="roundWinScoreDefault">1001</string>
-	
+
 	<string-array name="roundWinScoresArrayValues">
 		<item>1001</item>
 		<item>701</item>
 		<item>501</item>
 	</string-array>
-	
+
 	<!-- Choices for themeColors -->
 	<string-array name="themeColors">
 		<item>Zelena</item>
@@ -109,7 +107,7 @@
 		<item>Tamno Narančasta</item>
 		<item>Plava</item>
 	</string-array>
-	
+
 	<!-- Values for themeColors -->
 	<string-array name="themeColorsValues">
 		<item>#4CAF50</item>
@@ -119,10 +117,10 @@
 	</string-array>
 
 	<string name="themeColorDefault">#4CAF50</string>
-	
+
 	<!-- Long hold on round entry options -->
     <string-array name="scoreboardlongclickoptions">
         <item>Briši unos</item>
     </string-array>
-	
+
 </resources>
