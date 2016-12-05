@@ -18,8 +18,10 @@
 
 
 # Build info
+
 ### IDE
 >Android Studio project
+
 ### Build status
 [![Build Status](https://travis-ci.org/mlogic1/Belot-Asistent.svg?branch=master)](https://travis-ci.org/mlogic1/Belot-Asistent)
 
