@@ -21,7 +21,7 @@
 ### IDE
 >Android Studio project
 
-[![Build Status](https://travis-ci.org/mlogic1/Belot-asistent.svg?branch=master)](https://travis-ci.org/mlogic1/Belot-asistent)
+[![Build Status](https://travis-ci.org/mlogic1/Belot-Asistent.svg?branch=master)](https://travis-ci.org/mlogic1/Belot-Asistent)
 
 # License
 
