@@ -44,7 +44,7 @@ public class GameActivity extends AppCompatActivity {
 
     // Application settings
     private SharedPreferences preferences;
-    private  int WinScore;                          // Constant defining how much score is needed to win
+    private int WinScore;                          // Constant defining how much score is needed to win
     private boolean countRounds;
     private String TeamNameA;
     private String TeamNameB;
@@ -595,19 +595,19 @@ public class GameActivity extends AppCompatActivity {
         // calling team: false is teamA, true is teamB
 
         int ukupno = 162;
-        ukupno = ukupno + zvanjeTeamA + zvanjeTeamB;
+        ukupno += zvanjeTeamA + zvanjeTeamB;
         if(belaTeamB)
         {
             scoreTeamB = scoreTeamB + 20;
-            ukupno = ukupno + 20;
+            ukupno += 20;
         }
         if (belaTeamA)
         {
             scoreTeamA = scoreTeamA + 20;
-            ukupno = ukupno + 20;
+            ukupno += 20;
         }
-        scoreTeamB = scoreTeamB + zvanjeTeamB;
-        scoreTeamA = scoreTeamA + zvanjeTeamA;
+        scoreTeamB += zvanjeTeamB;
+        scoreTeamA += zvanjeTeamA;
 
         if (callingTeam) //true -> Team B je zval
         {
@@ -667,13 +667,13 @@ public class GameActivity extends AppCompatActivity {
 
 
         // Check if any of the teams won
-        if(totalScoreA > WinScore){
+        if(totalScoreA >= WinScore){
             // Team A won
             String winTeamName = textViewNameTeamA.getText().toString();
             OpenEndGameDialog( winTeamName, totalScoreA, totalScoreB);
             roundsWonTeamA++;
             UpdateToolBar();
-        }else if(totalScoreB > WinScore){
+        }else if(totalScoreB >= WinScore){
             // Team B won
             String winTeamName = textViewNameTeamB.getText().toString();
             OpenEndGameDialog( winTeamName, totalScoreB, totalScoreA);
