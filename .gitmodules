@@ -1,0 +1,3 @@
+[submodule "app/src/main/cpp/lib-belote"]
+	path = app/src/main/cpp/lib-belote
+	url = git@github.com:mlogic1/lib-belote.git

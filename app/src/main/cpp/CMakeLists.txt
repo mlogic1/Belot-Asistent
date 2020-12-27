@@ -5,9 +5,11 @@
 
 cmake_minimum_required(VERSION 3.10.2)
 
+add_subdirectory(lib-belote)
+
 # Declares and names the project.
 
-project("belotasistent")
+project("belotasistent" CXX)
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -45,4 +47,5 @@ target_link_libraries( # Specifies the target library.
 
                        # Links the target library to the log library
                        # included in the NDK.
-                       ${log-lib} )
+                       ${log-lib}
+                        belote)
