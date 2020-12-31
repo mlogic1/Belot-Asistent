@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/main_menu_add"
+        app:showAsAction="never"
+        android:title="Dodaj rundu">
+    </item>
+    <item
+        android:id="@+id/main_menu_settings"
+        app:showAsAction="never"
+        android:title="Postavke">
+    </item>
+    <item
+        android:id="@+id/main_menu_stats"
+        app:showAsAction="never"
+        android:title="Statistika">
+    </item>
+    <item
+        android:id="@+id/main_menu_about"
+        app:showAsAction="never"
+        android:title="About">
+    </item>
+</menu>
