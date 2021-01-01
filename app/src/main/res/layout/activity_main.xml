@@ -20,6 +20,36 @@
         app:title="Belot Asistent" />
 
     <LinearLayout
+        android:id="@+id/main_linear_layout_team_names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_toolbar">
+
+        <TextView
+            android:id="@+id/main_team_name_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:text="@string/main_default_team_name_a" />
+
+        <TextView
+            android:id="@+id/main_team_name_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:text="@string/main_default_team_name_b"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/main_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -27,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_toolbar"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/main_linear_layout_team_names"></LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

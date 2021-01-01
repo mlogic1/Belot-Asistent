@@ -3,4 +3,6 @@
     <string name="main_options_add_round">Dodaj Rundu</string>
     <string name="main_options_settings">Postavke</string>
     <string name="main_options_stats">Statistika</string>
+    <string name="main_default_team_name_a">Mi</string>
+    <string name="main_default_team_name_b">Vi</string>
 </resources>

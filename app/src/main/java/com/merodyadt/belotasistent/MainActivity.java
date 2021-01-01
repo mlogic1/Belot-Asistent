@@ -5,10 +5,16 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.merodyadt.belotasistent.data.RoundData;
 
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
@@ -20,6 +26,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private Toolbar m_toolBar;
+    private MatchParser m_matchParser = null;
+    private LinearLayout m_scoreBoardLayout = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -29,8 +37,20 @@ public class MainActivity extends AppCompatActivity
 
         m_toolBar = findViewById(R.id.main_toolbar);
         setSupportActionBar(m_toolBar);
+        m_scoreBoardLayout = findViewById(R.id.main_linear_layout);
+        m_matchParser = new MatchParser(this);
+        JSONObject currentMatchObj = m_matchParser.LoadCurrentMatch();
 
-        InitBeloteController();
+        if (currentMatchObj == null)
+        {
+            // TODO load this from preferences activity
+            InitBeloteControllerNew(1001);
+        }
+        else
+        {
+            InitBeloteControllerData(currentMatchObj.toString());
+        }
+
         RefreshScoreboard();
     }
 
@@ -43,9 +63,13 @@ public class MainActivity extends AppCompatActivity
 
     private void RefreshScoreboard()
     {
-        GetMatchRounds();
+        ArrayList<RoundData> data = GetMatchRounds();
+        m_scoreBoardLayout.removeAllViews();
+
+        // TODO for each data entry instantiate 1 view
     }
 
-    public native void InitBeloteController();
+    public native void InitBeloteControllerNew(int targetScore);
+    public native void InitBeloteControllerData(String data);
     public native ArrayList<RoundData> GetMatchRounds();
 }
