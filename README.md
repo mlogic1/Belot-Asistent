@@ -8,7 +8,7 @@
 - Mehanizam protiv slučajnog zatvaranja zapisnika
 - Podesive boje aplikacije
 - Podesivi nazivi ekipa
-- Mogućnost brisanja zapisanih runda (u slučaju pogreške)
+- Mogućnost brisanja i editiranja zapisanih runda (u slučaju pogreške)
 - Nema reklama!
 
   
@@ -30,7 +30,7 @@
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Filip Radic
+Copyright (c) 2021 Filip Radic
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

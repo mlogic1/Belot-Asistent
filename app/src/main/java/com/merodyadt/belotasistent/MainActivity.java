@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
 
+import com.merodyadt.belotasistent.data.RoundData;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity
 {
     // Used to load the 'native-lib' library on application startup.
@@ -26,10 +30,8 @@ public class MainActivity extends AppCompatActivity
         m_toolBar = findViewById(R.id.main_toolbar);
         setSupportActionBar(m_toolBar);
 
-        // Example of a call to a native method
-        TextView tv = findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
         InitBeloteController();
+        RefreshScoreboard();
     }
 
     @Override
@@ -39,6 +41,11 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public native String stringFromJNI();
+    private void RefreshScoreboard()
+    {
+        GetMatchRounds();
+    }
+
     public native void InitBeloteController();
+    public native ArrayList<RoundData> GetMatchRounds();
 }

@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="100">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50.0"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:id="@+id/scoreTeamA"
+        android:text="162"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50.0"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:id="@+id/scoreTeamB"
+        android:text="182"
+        />
+
+</LinearLayout>

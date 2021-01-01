@@ -4,21 +4,16 @@
     <item
         android:id="@+id/main_menu_add"
         app:showAsAction="never"
-        android:title="Dodaj rundu">
+        android:title="@string/main_options_add_round">
     </item>
     <item
         android:id="@+id/main_menu_settings"
         app:showAsAction="never"
-        android:title="Postavke">
+        android:title="@string/main_options_settings">
     </item>
     <item
         android:id="@+id/main_menu_stats"
         app:showAsAction="never"
-        android:title="Statistika">
-    </item>
-    <item
-        android:id="@+id/main_menu_about"
-        app:showAsAction="never"
-        android:title="About">
+        android:title="@string/main_options_stats">
     </item>
 </menu>
