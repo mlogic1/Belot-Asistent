@@ -12,8 +12,8 @@
         android:title="@string/main_options_settings">
     </item>
     <item
-        android:id="@+id/main_menu_stats"
+        android:id="@+id/main_menu_card_dealer"
         app:showAsAction="never"
-        android:title="@string/main_options_stats">
+        android:title="@string/main_options_card_dealer">
     </item>
 </menu>
