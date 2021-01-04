@@ -1,0 +1,14 @@
+<resources>
+    <!-- Preferences Arrays -->
+    <string-array name="settings_points_in_round_entries">
+        <item>501</item>
+        <item>701</item>
+        <item>1001</item>
+    </string-array>
+
+    <string-array name="settings_points_in_round_values">
+        <item>501</item>
+        <item>701</item>
+        <item>1001</item>
+    </string-array>
+</resources>

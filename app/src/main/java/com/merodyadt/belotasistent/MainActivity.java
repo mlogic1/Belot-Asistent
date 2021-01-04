@@ -1,10 +1,13 @@
 package com.merodyadt.belotasistent;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -59,6 +62,14 @@ public class MainActivity extends AppCompatActivity
     {
         getMenuInflater().inflate(R.menu.main_activity_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        Intent i = new Intent(this, SettingsActivity.class);
+        startActivity(i);
+        return super.onOptionsItemSelected(item);
     }
 
     private void RefreshScoreboard()

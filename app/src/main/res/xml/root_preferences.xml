@@ -1,0 +1,40 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/settings_header_general">
+
+        <ListPreference
+            app:key="@string/settings_key_points_in_round"
+            app:title="@string/settings_title_points_in_round"
+            app:persistent="true"
+            app:entries="@array/settings_points_in_round_entries"
+            app:entryValues="@array/settings_points_in_round_values"
+            app:defaultValue="1001"
+            />
+
+        <SwitchPreferenceCompat
+            app:key="@string/settings_key_count_rounds"
+            app:title="@string/settings_title_count_rounds"
+            app:summary="@string/settings_summary_count_rounds"
+            app:defaultValue="true"
+            app:persistent="true"
+            />
+
+        <EditTextPreference
+            app:key="@string/settings_key_team_name_A"
+            app:title="@string/settings_title_team_name_A"
+            app:defaultValue="@string/main_default_team_name_A"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="@string/settings_key_team_name_B"
+            app:title="@string/settings_title_team_name_B"
+            app:defaultValue="@string/main_default_team_name_B"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_header_info">
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

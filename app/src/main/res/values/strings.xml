@@ -4,6 +4,41 @@
     <string name="main_options_settings">Postavke</string>
     <string name="main_options_card_dealer">Tko Dijeli</string>
     <string name="main_options_stats">Statistika</string>
-    <string name="main_default_team_name_a">Mi</string>
-    <string name="main_default_team_name_b">Vi</string>
+    <string name="main_default_team_name_A">Mi</string>
+    <string name="main_default_team_name_B">Vi</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Keys -->
+    <string name="settings_key_points_in_round">points_in_round</string>
+    <string name="settings_key_count_rounds">count_rounds</string>
+    <string name="settings_key_team_name_A">team_name_A</string>
+    <string name="settings_key_team_name_B">team_name_B</string>
+    <string name="settings_key_theme">theme</string>
+
+
+    <!-- Preference Headers -->
+    <string name="settings_header_general">OPĆENITE POSTAVKE</string>
+    <string name="settings_header_info">NAPOMENE</string>
+
+    <!-- Preference Titles -->
+    <string name="settings_title_points_in_round">Broj bodova u jednoj rundi</string>
+    <string name="settings_title_count_rounds">Broj bodova u jednoj rundi</string>
+    <string name="settings_title_team_name_A">Naziv lijeve ekipe</string>
+    <string name="settings_title_team_name_B">Naziv desne ekipe</string>
+    <string name="settings_title_theme">Tema aplikacije</string>
+
+    <!-- Preference Summaries -->
+    <string name="settings_summary_count_rounds">Prikaži broj runda tokom igre</string>
+    <string name="settings_summary_team_name_A_default">Mi</string>
+    <string name="settings_summary_team_name_B_default">Vi</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>
