@@ -16,4 +16,9 @@
         app:showAsAction="never"
         android:title="@string/main_options_card_dealer">
     </item>
+    <item
+        android:id="@+id/main_menu_reset_round_counter"
+        app:showAsAction="never"
+        android:title="@string/main_options_reset_round_counter">
+    </item>
 </menu>

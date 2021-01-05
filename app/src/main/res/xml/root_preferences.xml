@@ -34,7 +34,11 @@
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/settings_header_info">
-
+        <Preference
+            app:key="@string/settings_key_stats"
+            app:title="@string/settings_title_stats"
+            app:summary="@string/settings_summary_stats">
+        </Preference>
     </PreferenceCategory>
 
 </PreferenceScreen>

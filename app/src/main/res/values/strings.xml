@@ -3,7 +3,7 @@
     <string name="main_options_add_round">Dodaj Rundu</string>
     <string name="main_options_settings">Postavke</string>
     <string name="main_options_card_dealer">Tko Dijeli</string>
-    <string name="main_options_stats">Statistika</string>
+    <string name="main_options_reset_round_counter">Resetiraj brojač rundi</string>
     <string name="main_default_team_name_A">Mi</string>
     <string name="main_default_team_name_B">Vi</string>
     <string name="title_activity_settings">SettingsActivity</string>
@@ -14,6 +14,7 @@
     <string name="settings_key_team_name_A">team_name_A</string>
     <string name="settings_key_team_name_B">team_name_B</string>
     <string name="settings_key_theme">theme</string>
+    <string name="settings_key_stats">stats</string>
 
 
     <!-- Preference Headers -->
@@ -26,11 +27,13 @@
     <string name="settings_title_team_name_A">Naziv lijeve ekipe</string>
     <string name="settings_title_team_name_B">Naziv desne ekipe</string>
     <string name="settings_title_theme">Tema aplikacije</string>
+    <string name="settings_title_stats">Statistika</string>
 
     <!-- Preference Summaries -->
     <string name="settings_summary_count_rounds">Prikaži broj runda tokom igre</string>
     <string name="settings_summary_team_name_A_default">Mi</string>
     <string name="settings_summary_team_name_B_default">Vi</string>
+    <string name="settings_summary_stats">Prikaz statistike</string>
 
     <!-- Messages Preferences -->
     <string name="signature_title">Your signature</string>
