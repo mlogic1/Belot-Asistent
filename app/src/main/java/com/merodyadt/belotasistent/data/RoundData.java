@@ -1,7 +1,5 @@
 package com.merodyadt.belotasistent.data;
 
-import android.util.Log;
-
 public class RoundData
 {
     private int RoundIndex;

@@ -3,8 +3,10 @@ package com.merodyadt.belotasistent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity
     private ArrayAdapter<RoundData> m_roundListAdapter = null;
     private FloatingActionButton m_addRoundFloatingButton = null;
     private View.OnClickListener m_addRoundClickListener = null;
+    private SharedPreferences m_preferences = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity
 
         m_toolBar = findViewById(R.id.main_toolbar);
         setSupportActionBar(m_toolBar);
+        m_preferences = PreferenceManager.getDefaultSharedPreferences(this);
         m_scoreBoardView = findViewById(R.id.main_list_view);
         m_addRoundFloatingButton = findViewById(R.id.floatingButtonAddRound);
         m_addRoundClickListener = new View.OnClickListener()
@@ -62,7 +66,8 @@ public class MainActivity extends AppCompatActivity
         if (currentMatchObj == null)
         {
             // TODO load this from preferences activity
-            InitBeloteControllerNew(1001);
+            int targetScore = Integer.parseInt(m_preferences.getString(getString(R.string.settings_key_points_in_round), "1001"));
+            InitBeloteControllerNew(targetScore);
         }
         else
         {
