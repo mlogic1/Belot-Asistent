@@ -45,15 +45,13 @@ extern "C" JNIEXPORT void JNICALL Java_com_merodyadt_belotasistent_MainActivity_
     java_util_ArrayList = static_cast<jclass>(env->NewGlobalRef(env->FindClass(jArrayListClassPath)));
     java_util_ArrayList_add = env->GetMethodID(java_util_ArrayList, "add", jArrayListAddMethodSig);
 
-    // TODO remove this and populate with actual data
-    env->CallBooleanMethod(out_rounds, java_util_ArrayList_add, jroundData);
-    env->CallBooleanMethod(out_rounds, java_util_ArrayList_add, jroundData);
-
     const Belote::BeloteMatch& currentMatch = beloteController->GetCurrentMatch();
     const std::vector<Belote::BeloteRoundData>& matchRounds = currentMatch.GetRounds();
 
-    for (const Belote::BeloteRoundData& roundData : matchRounds)
+    for (int i = 0 ; i < matchRounds.size() ; ++i)
     {
-
+    	const Belote::BeloteRoundData& roundData = matchRounds.at(i);
+		jobject jroundData = env->NewObject(jRoundDataCls, jRoundDataConstructor, i, roundData.GetToalScoreTeamA(), roundData.GetToalScoreTeamB());
+		env->CallBooleanMethod(out_rounds, java_util_ArrayList_add, jroundData);
     }
 }
