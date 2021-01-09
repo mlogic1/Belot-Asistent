@@ -2,6 +2,8 @@ package com.merodyadt.belotasistent.dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -12,13 +14,48 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 import com.merodyadt.belotasistent.R;
-import com.merodyadt.belotasistent.data.RoundData;
+
+class ScoreTextWatcher implements TextWatcher
+{
+	private EditText m_currentEditText = null;
+	private EditText m_oposingEditText = null;
+	private final int ROUND_TOTAL_SCORE = 162;
+
+	public ScoreTextWatcher(EditText currentEditText, EditText oposingEditText)
+	{
+		m_currentEditText = currentEditText;
+		m_oposingEditText = oposingEditText;
+	}
+
+	@Override
+	public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+	{
+
+	}
+
+	@Override
+	public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
+	{
+		if (!m_currentEditText.isFocused())
+		{
+			return;
+		}
+
+		m_oposingEditText.setText("123");
+	}
+
+	@Override
+	public void afterTextChanged(Editable editable)
+	{
+
+	}
+}
 
 public class ScoreInputDialog extends AlertDialog
 {
 	private Context m_context;
 	private AlertDialog.Builder m_alertDialogBuilder = null;
-	private RoundData m_result = null;
+	private ScoreInputDialogFinishedEventListener m_dialogFinishedListner;
 
 	private RadioButton m_radioButtonCallingTeamA = null;
 	private RadioButton m_radioButtonCallingTeamB = null;
@@ -31,9 +68,10 @@ public class ScoreInputDialog extends AlertDialog
 	private CheckBox m_checkboxBelaTeamA = null;
 	private CheckBox m_checkboxBelaTeamB = null;
 
-	public ScoreInputDialog(@NonNull Context context)
+	public ScoreInputDialog(@NonNull Context context, ScoreInputDialogFinishedEventListener dialogFinishedEventListner)
 	{
 		super(context);
+		m_dialogFinishedListner = dialogFinishedEventListner;
 		m_context = context;
 	}
 
@@ -83,6 +121,8 @@ public class ScoreInputDialog extends AlertDialog
 			}
 		};
 
+		m_editTextScoreTeamA.addTextChangedListener(new ScoreTextWatcher(m_editTextScoreTeamA, m_editTextScoreTeamB));
+
 		m_checkboxBelaTeamA.setOnClickListener(belaToggleEventListener);
 		m_checkboxBelaTeamB.setOnClickListener(belaToggleEventListener);
 
@@ -92,6 +132,10 @@ public class ScoreInputDialog extends AlertDialog
 			public void onClick(DialogInterface dialogInterface, int i)
 			{
 				// TODO handle this
+				if (m_dialogFinishedListner != null)
+				{
+					m_dialogFinishedListner.OnScoreInputDialogFinished(10,10,10,10);
+				}
 			}
 		});
 
@@ -106,4 +150,10 @@ public class ScoreInputDialog extends AlertDialog
 
 		m_alertDialogBuilder.create().show();
 	}
+
+	private void OnScoreValueChanged()
+	{
+
+	}
+
 }
