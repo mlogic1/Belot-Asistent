@@ -18,6 +18,7 @@ import android.widget.ListView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.merodyadt.belotasistent.adapter.RoundListAdapter;
 import com.merodyadt.belotasistent.data.RoundData;
+import com.merodyadt.belotasistent.dialog.ScoreInputDialog;
 
 import org.json.JSONObject;
 
@@ -142,6 +143,7 @@ public class MainActivity extends AppCompatActivity
     public void AddRoundButtonClick(View view)
     {
         Log.v(BELOT_LOG_TAG, "TODO add round input");
+        new ScoreInputDialog(this).show();
 
     }
 

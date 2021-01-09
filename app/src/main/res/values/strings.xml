@@ -44,4 +44,11 @@
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- ScoreInputDialog -->
+    <string name="score_input_title">Unos Bodova</string>
+    <string name="score_input_content_title">Zvanje</string>
+    <string name="score_input_call_bela">Bela</string>
+    <string name="score_input_button_ok">OK</string>
+    <string name="score_input_button_cancel">Prekid</string>
 </resources>
