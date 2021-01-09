@@ -48,6 +48,8 @@
     <!-- ScoreInputDialog -->
     <string name="score_input_title">Unos Bodova</string>
     <string name="score_input_content_title">Zvanje</string>
+    <string name="score_input_score_hint">Bodovi</string>
+    <string name="score_input_calls_hint">Zvanja</string>
     <string name="score_input_call_bela">Bela</string>
     <string name="score_input_button_ok">OK</string>
     <string name="score_input_button_cancel">Prekid</string>

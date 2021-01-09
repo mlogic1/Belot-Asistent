@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -39,4 +40,81 @@
             android:text="Vi" />
 
     </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTeamA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/linearLayoutTeamB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup">
+
+        <EditText
+            android:id="@+id/score_input_score_team_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/score_input_score_hint"
+            android:inputType="number"
+            android:maxLength="3"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/score_input_calls_team_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/score_input_calls_hint"
+            android:inputType="number"
+            android:maxLength="3"
+            android:singleLine="true" />
+
+        <CheckBox
+            android:id="@+id/score_input_bela_team_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/score_input_call_bela" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTeamB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/linearLayoutTeamA"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+        <EditText
+            android:id="@+id/score_input_score_team_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/score_input_score_hint"
+            android:inputType="number"
+            android:maxLength="3"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/score_input_calls_team_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/score_input_calls_hint"
+            android:inputType="number"
+            android:maxLength="3"
+            android:singleLine="true" />
+
+        <CheckBox
+            android:id="@+id/score_input_bela_team_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/score_input_call_bela" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -50,6 +50,41 @@ public class ScoreInputDialog extends AlertDialog
 		// setup all references
 		m_radioButtonCallingTeamA = dialogContent.findViewById(R.id.score_input_radio_calling_team_a);
 		m_radioButtonCallingTeamB = dialogContent.findViewById(R.id.score_input_radio_calling_team_b);
+		m_editTextScoreTeamA = dialogContent.findViewById(R.id.score_input_score_team_a);
+		m_editTextScoreTeamB = dialogContent.findViewById(R.id.score_input_score_team_b);
+		m_editTextCallsTeamA = dialogContent.findViewById(R.id.score_input_calls_team_a);
+		m_editTextCallsTeamB = dialogContent.findViewById(R.id.score_input_calls_team_b);
+		m_checkboxBelaTeamA = dialogContent.findViewById(R.id.score_input_bela_team_a);
+		m_checkboxBelaTeamB = dialogContent.findViewById(R.id.score_input_bela_team_b);
+
+		/*	Events	*/
+		// Bela checkbox
+		View.OnClickListener belaToggleEventListener = new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View view)
+			{
+				if (view == m_checkboxBelaTeamA)
+				{
+					if (m_checkboxBelaTeamA.isChecked())
+					{
+						m_checkboxBelaTeamB.setChecked(false);
+					}
+				}
+
+				if (view == m_checkboxBelaTeamB)
+				{
+					if (m_checkboxBelaTeamB.isChecked())
+					{
+						m_checkboxBelaTeamA.setChecked(false);
+					}
+				}
+
+			}
+		};
+
+		m_checkboxBelaTeamA.setOnClickListener(belaToggleEventListener);
+		m_checkboxBelaTeamB.setOnClickListener(belaToggleEventListener);
 
 		m_alertDialogBuilder.setPositiveButton(R.string.score_input_button_ok, new OnClickListener()
 		{
