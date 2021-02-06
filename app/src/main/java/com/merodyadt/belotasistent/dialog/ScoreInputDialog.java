@@ -95,6 +95,38 @@ public class ScoreInputDialog extends AlertDialog
 		m_checkboxBelaTeamA = dialogContent.findViewById(R.id.score_input_bela_team_a);
 		m_checkboxBelaTeamB = dialogContent.findViewById(R.id.score_input_bela_team_b);
 
+		m_alertDialogBuilder.setPositiveButton(R.string.score_input_button_ok, new OnClickListener()
+		{
+			@Override
+			public void onClick(DialogInterface dialogInterface, int i)
+			{
+				// TODO handle this
+				if (m_dialogFinishedListner != null)
+				{
+					m_dialogFinishedListner.OnScoreInputDialogFinished(10,10,10,10);
+				}
+			}
+		});
+
+		m_alertDialogBuilder.setNegativeButton(R.string.score_input_button_cancel, new OnClickListener()
+		{
+			@Override
+			public void onClick(DialogInterface dialogInterface, int i)
+			{
+				cancel();
+			}
+		});
+
+		AlertDialog dialog = m_alertDialogBuilder.create();
+		dialog.setOnShowListener(new OnShowListener()
+		{
+			@Override
+			public void onShow(DialogInterface dialogInterface)
+			{
+				((AlertDialog)dialogInterface).getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+			}
+		});
+
 		/*	Events	*/
 		// Bela checkbox
 		View.OnClickListener belaToggleEventListener = new View.OnClickListener()
@@ -122,33 +154,10 @@ public class ScoreInputDialog extends AlertDialog
 		};
 
 		m_editTextScoreTeamA.addTextChangedListener(new ScoreTextWatcher(m_editTextScoreTeamA, m_editTextScoreTeamB));
-
 		m_checkboxBelaTeamA.setOnClickListener(belaToggleEventListener);
 		m_checkboxBelaTeamB.setOnClickListener(belaToggleEventListener);
 
-		m_alertDialogBuilder.setPositiveButton(R.string.score_input_button_ok, new OnClickListener()
-		{
-			@Override
-			public void onClick(DialogInterface dialogInterface, int i)
-			{
-				// TODO handle this
-				if (m_dialogFinishedListner != null)
-				{
-					m_dialogFinishedListner.OnScoreInputDialogFinished(10,10,10,10);
-				}
-			}
-		});
-
-		m_alertDialogBuilder.setNegativeButton(R.string.score_input_button_cancel, new OnClickListener()
-		{
-			@Override
-			public void onClick(DialogInterface dialogInterface, int i)
-			{
-				cancel();
-			}
-		});
-
-		m_alertDialogBuilder.create().show();
+		dialog.show();
 	}
 
 	private void OnScoreValueChanged()
